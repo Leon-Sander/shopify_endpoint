@@ -1,0 +1,12 @@
+langchain
+pandas
+python-dotenv
+tiktoken
+jq
+sentence-transformers
+beautifulsoup4
+openai
+faiss-cpu
+## for the next tutorial
+fastapi
+uvicorn
