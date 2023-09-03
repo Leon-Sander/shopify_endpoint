@@ -5,6 +5,7 @@ import os
 load_dotenv()
 
 vectorstore = load_vectorstore(vectorstore_path="./shopify_langchaintesting_vectorstore", index_name="products")
+vectorstore_refunds = load_vectorstore(vectorstore_path="./shopify_langchaintesting_vectorstore", index_name="refund")
 
 app = FastAPI()
 
@@ -30,7 +31,7 @@ async def search_products(query: str, k: int = 4, token: str = Depends(veryify_a
 @app.get("/refund/")
 async def search_products(query: str, k: int = 1, token: str = Depends(veryify_api_key)):
     try:
-        results = vectorstore.similarity_search(query, k=k)
+        results = vectorstore_refunds.similarity_search(query, k=k)
         return results
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
