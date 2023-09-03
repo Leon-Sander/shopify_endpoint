@@ -25,3 +25,12 @@ async def search_products(query: str, k: int = 4, token: str = Depends(veryify_a
         return results
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+@app.get("/refund/")
+async def search_products(query: str, k: int = 1, token: str = Depends(veryify_api_key)):
+    try:
+        results = vectorstore.similarity_search(query, k=k)
+        return results
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
