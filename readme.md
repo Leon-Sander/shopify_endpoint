@@ -14,6 +14,8 @@ with open("raw_products.json", "r") as f:
 product_df = pd.DataFrame(raw_products["products"])
 ``````
 
+The shop_api also contains a refund endpoint, which will be relevant on a future video.
+
 ## Part 1: Langchain Vectorstore based on Shopify data https://www.youtube.com/watch?v=FTj3FLBamj0
 - Preprocess Shopify data to create a vector store.
 - Embed the title, tags, text, and description for better product recommendations.
